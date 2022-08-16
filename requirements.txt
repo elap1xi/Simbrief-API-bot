@@ -1,2 +1,5 @@
 discord.py
 asyncio
+os
+xmltodict
+urllib
