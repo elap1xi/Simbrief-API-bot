@@ -29,7 +29,7 @@ async def on_message(message):
         await message.channel.send("Test")
         return
 async def brief(message):
-    msg = await.message.channel.send("``Loading...``")
+    msg = await message.channel.send("``Loading...``")
     up = message.content.replace("+fp ","")
     user = up
     url = urlopen("https://www.simbrief.com/api/xml.fetcher.php?username={0}".format(user))
