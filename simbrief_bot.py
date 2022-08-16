@@ -12,6 +12,7 @@ async def on_ready():
 
 from urllib.request import urlopen
 import xmltodict
+import os
 '''
 @bot.command(description="Input your Simbrief Username")
 async def simbrief(ctx,
@@ -95,5 +96,5 @@ async def brief(message):
     await msg.delete()
     await message.channel.send(embed = brief_emb)
     return
-
+TOKEN = os.environ.get('TOKEN')
 client.run(TOKEN)
