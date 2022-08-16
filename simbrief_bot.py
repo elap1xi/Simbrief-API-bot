@@ -6,7 +6,7 @@ async def on_ready():
     print('{0.user} : Log in'.format(client))
 @client.event
 async def on_ready():
-    await client.change_presence(activity=discord.Game(name='///'))
+    await client.change_presence(activity=discord.Game(name='+fp <Simbrief Username>'))
     print('{0.user} : Log in'.format(client))
     print('Ready to start')
 
