@@ -32,6 +32,8 @@ async def brief(message):
     msg = await message.channel.send("``Loading...``")
     up = message.content.replace("+fp ","")
     user = up
+    if user=="빵":
+        user="Sanghyeon"
     url = urlopen("https://www.simbrief.com/api/xml.fetcher.php?username={0}".format(user))
     file_url = "https://www.simbrief.com/ofp/flightplans/"
     img_url = "https://www.simbrief.com/ofp/uads/"
