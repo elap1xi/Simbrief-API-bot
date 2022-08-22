@@ -29,11 +29,10 @@ async def on_message(message):
         await message.channel.send("Test")
         return
 async def brief(message):
-    msg = await message.channel.send("``Loading...``")
-    up = message.content.replace("+fp ","")
-    user = up
-    if user=="빵":
-        user="Sanghyeon"
+   msg = await message.channel.send("``Loading...``")
+   up = message.content.replace("+fp ","")
+   user = up
+   try:
     url = urlopen("https://www.simbrief.com/api/xml.fetcher.php?username={0}".format(user))
     file_url = "https://www.simbrief.com/ofp/flightplans/"
     img_url = "https://www.simbrief.com/ofp/uads/"
@@ -97,6 +96,8 @@ async def brief(message):
     brief_emb.set_footer(text=f"Source from : Simbrief | Response time {response_time}s")
     await msg.delete()
     await message.channel.send(embed = brief_emb)
-    return
+   except:
+    await msg.delete()
+    await message.channel.send(f"There's no user : {user}")
 TOKEN = os.environ.get('TOKEN')
 client.run(TOKEN)
